@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="components/prism-core.min.js"></script>
+	<script src="components/prism-ahk.min.js"></script>
+	<link href="themes/prism-github.min.css" rel="stylesheet" />
+</head>
+<body>
+
+Testing some inline code <code class="language-autohotkey">msgbox % "hi"</code>
+<br>
+
+<b>Code Block</b>
+<pre><code class="language-autohotkey">
+;Ahk code starts
+#SingleInstance Force
+msgbox Starting
+msgbox % "Loading Databases"
+ 
+Func("Avi", "Aryan")
+ 
+a := 1 , b := a+7
+b = %a%
+sum := a + ( b ** 2.5 )
+ 
+run , notepad.exe
+Winwaitactive, ahk_class Notepad
+if (true) {
+    SendInput Hi bye there
+}
+ 
+Func(val1, val2){
+    msgbox % val1 " " val2 " " clipboard
+    if DllCall("OpenClipboard")
+        return DllCall("CloseClipboard")
+}
+
+lable:
+ctrl::
+    return
+
+mylabel:
+    msgbox, I do nothing
+    return
+</code></pre>
+
+</body>
+</html>
