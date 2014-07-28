@@ -5,10 +5,12 @@ This project uses [Prism](https://github.com/LeaVerou/prism) to make a really li
 This Syntax highlighting javascript lacks autohotkey keywords and simply **relies on regex** to highlight code. Any valid AHK code will thus 
 highlight correctly. See [demo](https://rawgit.com/aviaryan/lightAHK/master/test.html)
 
-**Note** - Highlighting may encounter issues due to its total reliance on regex.
+**Note** - Highlighting may encounter issues due to its **total** reliance on **regex**.
 
 Prism also has full AutoHotkey syntax highlighting. Get it at their [download page](http://prismjs.com/download.html). 
-This highlighting script for AutoHotkey weighs upto **14 times less** than that distributed with Prism. 
+This highlighting script for AutoHotkey weighs upto **14 times less** than that distributed with Prism. It is recommended to use this highlighting 
+script only when you're sure the code is correct. Small chunks of code usually don't have *typos* or *hidden issues* and thus perfect for usage with 
+this script.
 
 The whole highlight package = 650 + 4111 + 1525 = **6.2kb**
 
@@ -30,3 +32,5 @@ Then use `language-autohotkey` class in code tag for highlighting.
     msgbox % "Loading Databases"
     </code></pre>
 
+## Bugs
+Bugs may exist due to the regex factor mentioned above. Feel free to open an issue when you encounter one. 
