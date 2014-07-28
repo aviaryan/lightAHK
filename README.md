@@ -1,7 +1,7 @@
 lightAHK
 =========
 
-This project uses [Prism](https://github.com/LeaVerou/prism) to make a really lightweight syntax highlighting solution for AutoHotkey. 
+This project uses [Prism.js](https://github.com/LeaVerou/prism) to make a really lightweight syntax highlighting solution for AutoHotkey. 
 This Syntax highlighting javascript lacks autohotkey keywords and simply **relies on regex** to highlight code. Any valid AHK code will thus 
 highlight correctly. See [demo](https://rawgit.com/aviaryan/lightAHK/master/test.html)
 
@@ -31,6 +31,10 @@ Then use `language-autohotkey` class in code tag for highlighting.
     msgbox Starting
     msgbox % "Loading Databases"
     </code></pre>
-
-## Bugs
+  
+### More themes and docs
+Please get more themes from [Prism](http://prismjs.com)'s website. As this project uses Prism.js and is nothing on its own, 
+[Prismjs.com](http://prismjs.com) is the best resource for more information. If you need more help, open an issue.
+  
+### Bugs
 Bugs may exist due to the regex factor mentioned above. Feel free to open an issue when you encounter one. 
