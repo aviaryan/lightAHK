@@ -12,7 +12,7 @@ This highlighting script for AutoHotkey weighs upto **14 times less** than that 
 script *only* when you're sure the code is correct. Small chunks of code usually don't have *typos* or *hidden issues* and thus perfect for usage with 
 this script.
 
-The whole highlight package = 650 + 4111 + 1525 = **6.2kb**
+The whole highlight package = 850 + 4111 + 1525 = **6.4kb**
 
 ## Using
 Include these 3 files in the `<head>` tag. 
