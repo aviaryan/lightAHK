@@ -3,12 +3,19 @@
 Prism.languages.autohotkey= {
 	'comment': /(;[^\n]*|^\s*\/\*[\s\S]*\s*\*\/)/gm,
 	'string': /"(([^"\n\r]|"")*)"/gm,
-	'attr-name':  /^[ \t]*[a-z]+?(?=[ \t]*?$)/gmi, // - 2 steps necessary to block this
-	'selector': /(\b(return)\b|\n[ \t]*[a-z]+?(?=([ \t]*?,|[ \t]+?(%|\w[^,\(\)]*$)).*$))/gmi,   // \w there to match "run notepad.exe"
-	// return also returuns function v() exception. \n used is a workaround
+	'attr-name':  {
+		pattern: /(\n[ \t]*[a-z]+?(?=[ \t]*?$)|^[ \t]*?[a-z]+?(?=[ \t]+?[^,\(\{\%=]+$))/i, // - 2 steps necessary to block this
+		inside: {
+			'keyword': /\b(else)\b/i
+		}
+		// 2nd part matches single-line or top-line code without commas ( ex- run notepad.exe ) . match before the latter..
+	},
+	'selector':  /(\b(return)\b|^[ \t]*?[a-z]+?(?=([ \t]*?,|[ \t]+?%).*$)|\n[ \t]*?[a-z]+?(?=[ \t]+[^,\(\{=\n]+$))/mi,
+	// third part matches without comma commands in block code (start with \n)
+	// return also returns function - an exception.
 	'keyword': /\b(ahk_[a-z]*|if|else|for)\b/i,
 	'function': /[^\(\); \t\,\n\+\*\-\=\?>:\\\/<\&%\[\]]+?(?=\()/gm,  //function - don't use .*\) in the end bcoz string locks it
-	'symbol': /^[ \t]*[a-z0-9]+?(?=::)/gm, //hotkeys - label
+	'symbol': /^[ \t]*[a-z0-9]+?(?=::)/gm, //hot-keys - label
 	'tag': /^[ \t]*[^\s:]+?(?=:)/gm,  //labels
 	'variable': /\%\w+\%/g,
 	'number': /\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?)\b/g,

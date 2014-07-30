@@ -7,11 +7,12 @@
 </head>
 <body>
 
-Testing some inline code <code class="language-autohotkey">msgbox % "hi"</code>
+Testing some inline code <code class="language-autohotkey">msgbox % "hi"</code><br>
+<code class="language-autohotkey">send hi there</code>
 <br>
 
 <b>Code Block</b>
-<pre><code class="language-autohotkey">
+<pre><code class="language-autohotkey">send jay
 ;Ahk code starts
 #SingleInstance Force
 msgbox Starting
@@ -28,6 +29,8 @@ Winwaitactive, ahk_class Notepad
 if (true) {
     SendInput Hi bye there
 }
+else 
+    msgbox % j
  
 Func(val1, val2){
     msgbox % val1 " " val2 " " clipboard

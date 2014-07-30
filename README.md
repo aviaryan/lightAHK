@@ -1,7 +1,7 @@
 lightAHK
 =========
 
-This project uses [Prism.js](https://github.com/LeaVerou/prism) to make a really lightweight syntax highlighting solution for AutoHotkey. 
+This **(fun)** project uses [Prism.js](https://github.com/LeaVerou/prism) to make a really lightweight syntax highlighting solution for AutoHotkey. 
 This Syntax highlighting javascript lacks autohotkey keywords and simply **relies on regex** to highlight code. Any valid AHK code will thus 
 highlight correctly. See [demo](https://rawgit.com/aviaryan/lightAHK/master/test.html)
 
@@ -9,7 +9,7 @@ highlight correctly. See [demo](https://rawgit.com/aviaryan/lightAHK/master/test
 
 Prism also has full AutoHotkey syntax highlighting. Get it at their [download page](http://prismjs.com/download.html). 
 This highlighting script for AutoHotkey weighs upto **14 times less** than that distributed with Prism. It is recommended to use this highlighting 
-script only when you're sure the code is correct. Small chunks of code usually don't have *typos* or *hidden issues* and thus perfect for usage with 
+script *only* when you're sure the code is correct. Small chunks of code usually don't have *typos* or *hidden issues* and thus perfect for usage with 
 this script.
 
 The whole highlight package = 650 + 4111 + 1525 = **6.2kb**
