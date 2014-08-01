@@ -2,7 +2,7 @@
 <html>
 <head>
 	<script src="components/prism-core.min.js"></script>
-	<script src="components/prism-ahk.min.js"></script>
+	<script src="components/prism-ahk.js"></script>
 	<link href="themes/prism-github.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -12,12 +12,18 @@ Testing some inline code <code class="language-autohotkey">msgbox % "hi"</code><
 <br>
 
 <b>Code Block</b>
-<pre><code class="language-autohotkey">send jay
+<pre><code class="language-autohotkey">
+/* 
+start of "some" hj;addf
+code
+*/
+;code
+send jay
 ;Ahk code starts
 #SingleInstance Force
 msgbox Starting
-msgbox % "Loading Databases"
- 
+msgbox % "Loading ;Databases"  ;comment
+;more "comments"
 Func("Avi", "Aryan")
  
 a := 1 , b := a+7

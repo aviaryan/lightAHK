@@ -1,7 +1,10 @@
 // by Avi Aryan ( http://aviaryan.github.io )
 // NOTES - follows first-first highlight method, block is locked after highlight, different from SyntaxHl
 Prism.languages.autohotkey= {
-	'comment': /(;[^\n]*|^\s*\/\*[\s\S]*\s*\*\/)/gm,
+	'comment': {
+		pattern: /(^[^";\n]*("[^"\n]*?"[^"\n]*)*)(;.*$|^\s*\/\*[\s\S]*\s*\*\/)/gm,  // the ^ is very dangerous, matches \n also
+		lookbehind: true
+	},
 	'attr-name':  {
 		pattern: /(\n[ \t]*[a-z]+(?=[ \t]*?(\n|$))|^[ \t]*?[a-z]+?(?=[ \t]+?[^,:=\.\%].*?($|\n))|^[ \t]*?[a-z]+?(?=([ \t]*?,|[ \t]+?%).*$))/i, // - 2 steps necessary to block this
 		inside: {
@@ -19,7 +22,7 @@ Prism.languages.autohotkey= {
 	'tag': /^[ \t]*[^\s:]+?(?=:\s*$)/gm,  //labels
 	'variable': /\%\w+\%/g,
 	'number': /\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?)\b/g,
-	'operator': /[\+\-\*\\\/:=\?]/g,
+	'operator': /[\+\-\*\\\/:=\?\&\|<>]/g,
 	'punctuation': /[\{}[\]\(\):]/g,
 	'boolean': /\b(true|false)\b/g,
 	'constant': /\b(a_[a-z]*|clipboard(|All)|comspec|errorlevel)\b/ig,
